@@ -11,6 +11,21 @@
   </head>
 
   <body>
+    <header>
+      <nav >
+        <% if user_signed_in? %>
+          <%= link_to "MINPAKU", "/" %>
+          <%= current_user.name%>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "アカウント情報", users_show_path(current_user) %>
+        <% else %>
+          <%= link_to "ログイン",  new_user_session_path %>
+          <%= link_to "新規登録",  new_user_registration_path %>
+        <% end %>
+      </nav>
+    </header>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
