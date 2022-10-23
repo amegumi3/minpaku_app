@@ -1,0 +1,23 @@
+<table>
+   <thead>
+    <tr>
+     <th>ルーム画像</th>
+     <th>ルーム名</th>
+     <th>ルーム紹介</th>
+     <th>合計料金</th>
+    </tr>
+   </thead> 
+  <tbody>
+<% @rooms.each do |room| %>
+   <tr>
+    <% if room.room_image.attached? %>
+    <td><%= image_tag room.room_image.variant(resize: "200")%></td>
+    <% end %>
+    <td><%= room.name%></td>
+    <td><%= room.introduction%></td>
+    <td><%= room.price%></td>
+    <td><%= link_to "詳細", room_path(room) %></td>
+   </tr>
+  </tbody>  
+<% end %>
+</table>  

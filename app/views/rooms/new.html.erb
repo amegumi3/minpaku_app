@@ -1,0 +1,23 @@
+<div class= "table_wrapper">
+  <%= form_with model: @room do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :name, "ルーム名" %></th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :introduction, "ルーム紹介" %></th>
+      <td><%= f.text_field :introduction %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :price, "料金" %></th>
+      <td><%= f.number_field :price %> </td>
+    </tr>
+    <tr>
+      <th><%= f.label :price, "写真" %></th>
+      <td><%= f.file_field :room_image %> </td>
+    </tr>
+  </table>
+  <%= f.submit "登録",class: "submit" %>
+  <% end %>
+</div>
