@@ -6,6 +6,7 @@
     <td><%= image_tag @room.room_image.variant(resize: "150")%>
  <% end %>
  <h2><%= @room.name %></h2>
+ <h2><%= @room.user_id %></h2>
  <p><%= @room.introduction %></p>
  <%= @room.price %>
 </div>

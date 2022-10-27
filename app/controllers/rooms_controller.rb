@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
     if @room.save
       flash[:notice] = "新規投稿をしました"
       redirect_to :rooms
+      flash[:notice] = "新規投稿できませんでした"
     else
       render "new"
     end    
@@ -32,7 +33,7 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:name, :price, :introduction, :adress, :room_image)
+    params.require(:room).permit(:name, :price, :introduction, :adress, :room_image, :user_id)
   end  
 
 
