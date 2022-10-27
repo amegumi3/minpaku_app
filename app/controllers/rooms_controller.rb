@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+    @rooms = Room.where(user_id: current_user.id)
   end
 
   def new
@@ -12,9 +12,9 @@ class RoomsController < ApplicationController
     if @room.save
       flash[:notice] = "新規投稿をしました"
       redirect_to :rooms
-      flash[:notice] = "新規投稿できませんでした"
     else
       render "new"
+      flash[:notice] = "新規投稿できませんでした"
     end    
   end
 
