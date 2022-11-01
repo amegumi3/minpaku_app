@@ -1,0 +1,26 @@
+<h1>Confirm Menu</h1>
+
+  <table>
+    <tr>
+      <th>開始日</th>
+      <td><%= @reservation.start_date.to_s(:datetime)%></td>
+    </tr>
+    <tr>
+      <th>終了日</th>
+      <td><%= @reservation.end_date.to_s(:datetime) %></td>
+    </tr>
+    <tr>
+      <th>人数</th>
+      <td><%= @reservation.how_many %>人</td>
+  </table>
+
+
+<%= form_with model: @reservation do |f| %>
+  <%= f.hidden_field :start_date %>
+  <%= f.hidden_field :end_date %>
+  <%= f.hidden_field :how_many %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :room_id %>
+  <%= f.submit "投稿する" %>
+  <%= f.submit "修正する", name: "back" %>
+<% end %>

@@ -1,6 +1,5 @@
 <p>詳細</p>
 
-
 <div class="room-info">
  <% if @room.room_image.attached? %>
     <td><%= image_tag @room.room_image.variant(resize: "150")%>
@@ -9,4 +8,28 @@
  <h2><%= @room.user_id %></h2>
  <p><%= @room.introduction %></p>
  <%= @room.price %>
+</div>
+
+<p>予約する</p>
+<p><%= @room.price%>/日</p>
+<div>
+  <%= form_with model: @reservation, url: confirm_reservations_path(@event), local: true do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :start_date, "開始日" %></th>
+      <td><%= f.datetime_field :start_date %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :end_date, "終了日" %></th>
+      <td><%= f.datetime_field :end_date %> </td>
+    </tr>
+    <tr>
+      <th><%= f.label :how_many, "人数" %></th>
+      <td><%= f.number_field :how_many %></td>
+    </tr>
+     <%= f.hidden_field :user_id, value: current_user.id %>
+     <%= f.hidden_field :room_id, value: @room.id %>
+  </table>
+  <%= f.submit "登録する",class: "submit" %>
+  <% end %>
 </div>
