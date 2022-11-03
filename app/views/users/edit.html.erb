@@ -1,0 +1,15 @@
+<div class= "table_wrapper">
+  <%= form_with model: @user do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :name, "名前" %></th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :introduction, "自己紹介" %></th>
+      <td><%= f.text_field :introduction %></td>
+    </tr>
+  </table>
+  <%= f.submit "更新",class: "submit" %>
+  <% end %>
+</div>
