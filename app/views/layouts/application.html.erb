@@ -14,9 +14,14 @@
     <header>
       <nav >
        <% if user_signed_in? %>
-        <div>
+        <div class="header-inner">
+         <div class="header-left-menu">
           <%= link_to "MINPAKU", "/" ,class:"link" %>
-          <%= current_user.name%>
+         </div>
+         <div class="header-right-menu">
+          <div class="user-name"><%= current_user.name%></div>
+          <div class="list-menu"></div> 
+         </div>
         </div>  
         <div>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

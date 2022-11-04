@@ -17,3 +17,8 @@
  * {
   text-decoration: none;
  }
+ header {
+  background-color: bisque;
+  height: 70px;
+  padding: 5px;
+ }
