@@ -32,6 +32,21 @@ class RoomsController < ApplicationController
   def destroy
   end
 
+  def search
+    if params[:content] == "東京"
+      @rooms = Room.where("adress like ?", "東京%")
+    elsif params[:content] == "大阪"
+      @rooms = Room.where("adress like ?", "大阪%")
+    elsif params[:content] == "京都"
+      @rooms = Room.where("adress like ?", "京都%")   
+    elsif params[:content] == "北海道"
+      @rooms = Room.where("adress like ?", "北海道%")       
+    else  
+    @q = Room.ransack(params[:q])
+    @rooms = @q.result
+    end
+  end  
+
   private
   def room_params
     params.require(:room).permit(:name, :price, :introduction, :adress, :room_image, :user_id)

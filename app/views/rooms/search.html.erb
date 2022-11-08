@@ -1,0 +1,19 @@
+<h1>検索結果</h1>
+ <% @rooms.each do |room| %>
+  <%= link_to room_path(room.id) do %>
+   <div>
+    <div>
+      <% if room.room_image.attached? %>
+        <%= image_tag room.room_image.variant(resize: "200")%>
+      <% else %> 
+        <img class="header-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">
+      <% end %> 
+    </div>
+    <div>
+      <%= room.name %>
+      <%= room.adress %>
+      <%= room.price %>  
+    </div>
+   </div>
+  <% end %> 
+ <% end %> 

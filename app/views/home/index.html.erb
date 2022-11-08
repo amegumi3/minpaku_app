@@ -3,82 +3,47 @@
     <div class="top-message-wrapper">
       <div class="col-lg-6 col-md-8 mx-auto top-message">
         <h3 class="fw-light">Potepan Shareでまだ体験したことのない旅をしよう</h3>
-        <p>エリア</p>
-        <button>探す</button>
+        <%= search_form_for @q,url: search_rooms_path  do |f| %>
+          <%= f.label :adress_cont, "エリア" %>
+          <%= f.search_field :adress_cont %>
+          <br>
+          <%= f.submit %>
+        <% end %>
       </div>
     </div>
   </section>
 
   <div class="album py-5 bg-light">
     <div class="container">
+      <div class="recommend-title">
+        <h4>おすすめのエリア</h4>
+      </div>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">  
+        <div class="images">
+        <%= link_to search_rooms_path content: "東京" do  %>
+         <span>東京</span>
+         <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg">
+        <% end %> 
+        </div>        
+        <div class="images">
+        <%= link_to search_rooms_path content: "大阪" do %>
+         <span>大阪</span>
+         <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg">
+        <% end %> 
+        </div>  
+        <div class="images">
+        <%= link_to search_rooms_path content: "京都" do %>
+         <span>京都</span>
+          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg">
+        <% end %>  
         </div>
 
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
+        <div class="images">
+        <%= link_to search_rooms_path content: "北海道" do %>
+         <span>北海道</span>
+         <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg">
+        <% end %> 
         </div>
 
       </div>

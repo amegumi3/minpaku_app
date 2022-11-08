@@ -4,6 +4,7 @@
 * {
   max-width: 1400px;
 }
+
 section {
   background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
   background-size: cover;
@@ -21,4 +22,23 @@ section {
 button {
   background-color: #4a90e2;
   color: white;
+}
+
+.recommend-title h4{
+  font-weight: bold;
+}
+.images  img {
+  width: 100%;
+  height: 100%;
+}
+.images {
+  position: relative;
+}
+.images span {
+  position: absolute;
+  bottom: 50px;
+  right: 40%;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
 }
