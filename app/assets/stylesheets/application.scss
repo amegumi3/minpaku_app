@@ -19,7 +19,7 @@
   text-decoration: none;
   box-sizing: border-box;
  }
- 
+
 .name {
   color: white;
   padding-top: 15px;
@@ -71,47 +71,146 @@ footer {
   display: flex;
   justify-content: center;
 }
-
 .form-view {
   display: flex;
 }
 
 /*ログイン後のフォーム画面 ex)設定、ルーム登録画面*/
-
-
 .color-form-wrapper {
   background-color: #F6F8F9;
 }
 .form {
   background-color: white;
-  margin-top: 6%;
-  margin-bottom: 5%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 1px solid #eaedef;
 }
-.row ul {
+.setting-row {
+  display: flex;
+}
+.label{
+  padding-right: 40px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.setting-row ul {
   list-style: none;
   display: flex;
 }
-
-.row {
-  border-bottom: 1px black solid;
-  margin:30px 10px;
+.nav-not-title {
+  color: black;
 }
+.setting-row {
+  border-bottom: 1px black solid;
+  margin:30px 20px;
+}
+.setting-row input {
+  width: 100%;
+}
+
 .submit {
   padding: 10px 50px;
   border-radius: 5px;
   color: white;
   border: 1px solid  #4a90e2;
 }
-
-
-/*プロフィール画面*/
+.nav {
+  padding-bottom: 20px;
+}
+.nav ul{
+  list-style: none;
+  font-size: 20px;
+  margin: 30px 0 0px 20px ;
+}
+.nav a{
+  text-decoration: none;
+}
+.nav a:hover{
+  text-decoration: none;
+}
 .profile-image {
   border-radius: 50%;  
   width:  70px;       
   height: 70px;
+  margin-bottom: 25px;
 }
 .image-row {
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #eaedef;
+}
+.setting-row {
+  border-bottom: 1px solid #eaedef;
+}
+.account-button {
+  text-decoration: none;
+  text-align: center;
+}
+.account-button:hover {
+  color: white;
+  text-decoration: none;
+}
+@media (max-width: 1000px) {
+  .form {
+   width: 97%;
+  }
+  .nav ul {
+  display: flex;
+  }
+  .profile {
+    margin-left: 50px;
+  }
+  .account {
+    margin-right: 50px;
+  }
+  .nav-title {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #4a90e2;
+  }
+}
+@media (min-width: 1000px) {
+  .view {
+    display: flex;
+  }
+  .nav {
+    width: 20%;
+  }
+  .nav li {
+    padding-bottom: 10px;
+  }
+  .nav-title {
+    padding-right: 20px;
+    border-right: 3px solid #4a90e2;
+  }
+  .color-form-wrapper {
+    width: 80%;
+  }
+}
+/*index画面*/
+.index-view {
+  padding-left: 40px;
+}
+table {
+  text-align: center;
+}
+
+tbody td{
+  padding: 16px 3px;
+  border-bottom: 1px solid #eaedef;
+} 
+
+.index-column th{
+  padding: 8px 15px;
+  border-bottom: 1px solid #eaedef;
+  border-top: 1px solid #eaedef;
+}
+.room-image {
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+}
+.index-title {
+  padding: 20px 0px;
 }

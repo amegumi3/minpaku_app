@@ -9,27 +9,43 @@ section {
   background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
   background-size: cover;
 }
-.top-message-wrapper{
-  display: flex;
-  align-items: center;
-  margin: 16%;
-}
-.top-message-wrapper{
+.top-message {
   background-color: white;
+  padding: 20px 30px 40px;
   border-radius: 5px;
-  justify-content: center;
+  text-align: start;
 }
-button {
+.top-message span {
+  font-weight: 400;
+}
+.top-message p {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: lengter;
+}
+.search-button {
   background-color: #4a90e2;
   color: white;
+  margin-top: 20px;
+  border-radius: 5px !important;
+}
+
+.top-message input {
+  width: 100%;
+  border-radius: 2px;
+  padding: 5px;
+  border: 1px solid #ced4da;
 }
 
 .recommend-title h4{
   font-weight: bold;
+  padding-bottom: 30px;
 }
 .images  img {
   width: 100%;
-  height: 100%;
+  height: 360px;
+  border-radius: 5px;
 }
 .images {
   position: relative;

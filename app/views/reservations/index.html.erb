@@ -1,26 +1,39 @@
-<table>
-   <thead>
-    <tr>
-     <th>ルーム画像</th>
-     <th>ルーム名</th>
-     <th>合計料金</th>
-     <th>開始日</th>
-     <th>終了日</th>
-     <th>予約確定日</th>
-    </tr>
-   </thead> 
-  <tbody>
-<% @reservations.each do |reservation| %>
-   <tr>
-    <% if reservation.room.room_image.attached? %>
-    <td><%= image_tag reservation.room.room_image.variant(resize: "200")%></td>
-    <% end %>
-    <td><%= reservation.room.name%></td>
-    <td><%= (reservation.room.price)*(reservation.how_many)%></td>
-    <td><%= reservation.start_date.to_s(:datetime)%></td>
-    <td><%= reservation.end_date.to_s(:datetime)%></td>
-    <td><%= reservation.created_at.to_s(:datetime)%></td>
+<div class="index-view">
+ <div class="index-title">
+  <h4>予約済みルーム一覧</h4>
+ </div>
+ <table>
+  <thead>
+   <tr class="index-column">
+    <th>ルーム画像</th>
+    <th>ルーム名</th>
+    <th>合計料金</th>
+    <th>開始日</th>
+    <th>終了日</th>
+    <th>予約確定日</th>
    </tr>
+  </thead> 
+  <tbody>
+  <% @reservations.each do |reservation| %>
+  <tr>
+   <td>
+   <% if reservation.room.room_image.attached? %>
+    <%= image_tag reservation.room.room_image.variant(resize: "200"), class:"room-image"%>
+   <% else %>
+    <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/room01.jpg">
+   <% end %>
+   </td>
+   <td>
+   <%= link_to room_path(reservation.room_id)  do %>
+    <%= reservation.room.name %>
+   <% end %>
+  </td>
+   <td>¥<%= (reservation.room.price)*(reservation.how_many)%></td>
+   <td><%= reservation.start_date.to_s(:datetime)%></td>
+   <td><%= reservation.end_date.to_s(:datetime)%></td>
+   <td><%= reservation.created_at.to_s(:datetime)%></td>
+  </tr>
   </tbody>  
-<% end %>
-</table>  
+  <% end %>
+  </table>  
+</div>   

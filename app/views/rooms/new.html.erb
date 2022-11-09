@@ -1,45 +1,47 @@
 <div class="view">
  <div class="nav">
-  <h5>基本情報</h5>
+  <ul>
+   <li><%= link_to "基本情報", new_room_path, class:"nav-title " %></li>
+  </ul>
  </div>
  <div class="form-wrapper color-form-wrapper">
   <div class= "form">
    <%= form_with model: @room do |f| %>
-   <div class="row">
+   <div class="setting-row">
     <h5>ルーム情報登録</h5>
    </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :name, "ルーム名" %></li>
+       <li class="label"><%= f.label :name, "ルーム名" %></li>
        <li><%= f.text_field :name %></li>
       </ul>
     </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :introduction, "ルーム紹介" %></li>
+       <li class="label"><%= f.label :introduction, "ルーム紹介" %></li>
        <li><%= f.text_field :introduction %></li>
       </ul>
     </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :price, "料金" %></li>
+       <li class="label"><%= f.label :price, "料金" %></li>
        <li><%= f.number_field :price %></li>
       </ul>
     </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :image, "住所" %></li>
+       <li class="label"><%= f.label :image, "住所" %></li>
        <li><%= f.text_field :adress %></li>
       </ul>
     </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :image, "ルーム画像" %></li>
+       <li class="label"><%= f.label :image, "ルーム画像" %></li>
        <li><%= f.file_field :room_image %></li>
       </ul>
     </div>
      <%= f.hidden_field :user_id, value: current_user.id %>
-   <div class="form-submit">
+   <div class="setting-form-submit">
     <%= f.submit "登録",class: "submit" %>
    </div>
    <% end %>

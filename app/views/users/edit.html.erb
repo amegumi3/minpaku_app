@@ -1,14 +1,14 @@
 <div class="view">
  <div class="nav">
   <ul>
-   <li><%= link_to "アカウント", user_path %></li>
-   <li><%= link_to "プロフィール", edit_user_path %></li>
+   <li><%= link_to "アカウント", user_path, class:"nav-not-title" %></li>
+   <li><%= link_to "プロフィール", edit_user_path, class:"nav-title profile" %></li>
   </ul>
  </div>
  <div class="form-wrapper color-form-wrapper">
   <div class= "form">
    <%= form_with model: @user do |f| %>
-   <div class="row">
+   <div class="setting-row">
     <h5>プロフィール</h5>
    </div>
     <div class="image-row">
@@ -18,25 +18,27 @@
         <img class="profile-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">        
       <% end %>
     </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :image, "アイコン画像" %></li>
+       <li><%= f.label :image, "アイコン画像",class:"icon-label label" %></li>
        <li><%= f.file_field :image %></li>
       </ul>
     </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :name, "名前" %></li>
-       <li><%= f.text_field :name %></li>
+       <li><%= f.label :name, "名前", class:"label name-label" %></li>
+       <li><%= f.text_field :name ,class:"write-field"%></li>
       </ul>
     </div>
-    <div class="row">
+    <div class="setting-row">
       <ul>
-       <li><%= f.label :introduction, "自己紹介" %></li>
+       <li><%= f.label :introduction, "自己紹介", class:"introduction-label label" %></li>
        <li><%= f.text_field :introduction %></li>
       </ul>
     </div>
-    <%= f.submit "更新",class: "submit" %>
+    <div class="setting-row">
+     <%= f.submit "更新",class: "submit" %>
+    </div> 
    </div>
    <% end %>
   </div>
