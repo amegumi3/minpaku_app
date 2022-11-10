@@ -1,5 +1,4 @@
 <h1>Confirm Menu</h1>
-
   <table>
     <tr>
       <th>開始日</th>
@@ -13,8 +12,6 @@
       <th>人数</th>
       <td><%= @reservation.how_many %>人</td>
   </table>
-
-
 <%= form_with model: @reservation do |f| %>
   <%= f.hidden_field :start_date %>
   <%= f.hidden_field :end_date %>

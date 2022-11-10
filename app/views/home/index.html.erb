@@ -2,12 +2,13 @@
   <section class="py-5 text-center">
     <div class="first-view">
       <div class="col-lg-6 col-md-8 mx-auto top-message">
-        <h2 class="fw-light"><span>Potepan Share</span>でまだ体験したことのない旅をしよう</h2>
+        <h3 class="fw-light">Potepan Shareでまだ体験したことのない旅をしよう</h3>
         <%= search_form_for @q,url: search_rooms_path  do |f| %>
-          <p><%= f.label :adress_cont, "エリア" %></p>
+          <p></p><%= f.label :adress_cont, "エリア" %>
+          <br>
           <%= f.search_field :adress_cont %>
           <br>
-          <%= f.submit class:"search-button" %>
+          <%= f.submit class:"search-button "%>
         <% end %>
       </div>
     </div>

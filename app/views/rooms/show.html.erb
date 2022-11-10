@@ -23,7 +23,7 @@
 
  <div class="new-reservation">
   <h5>¥ <%= @room.price%> / 日</h5>
-  <%= form_with model: @reservation, url: confirm_reservations_path(@event), local: true do |f| %> 
+  <%= form_with model: @reservation, url: confirm_reservations_path, local: true do |f| %> 
    <div class="reservation-form">
     <p><%= f.label :start_date, "開始日" %></p>
     <p><%= f.datetime_field :start_date %></p>

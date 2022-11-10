@@ -10,11 +10,11 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      flash[:notice] = "新規投稿をしました"
+      flash[:success] = "新規投稿をしました"
       redirect_to :rooms
     else
+      flash[:danger] = "新規投稿できませんでした"
       render "new"
-      flash[:notice] = "新規投稿できませんでした"
     end    
   end
 

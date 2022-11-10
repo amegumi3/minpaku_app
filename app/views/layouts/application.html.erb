@@ -57,9 +57,13 @@
     <div class="navbar navbar-dark bg-dark shadow-sm">
      <div class="container">
       <div class="header-left">
+       <div class="top-link-icon">
        <%= link_to "/" do%>
        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
        <% end %>
+       </div>
+       <div class="header-search">
+       </div>
       </div>
       <div class="header-right">
        <% if user_signed_in? %>
