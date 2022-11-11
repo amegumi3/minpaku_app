@@ -1,0 +1,27 @@
+<div class="search-view">
+  <h3>検索結果: <%= @rooms.count %> 件</h3>
+  <div class=" results">
+  <% @rooms.each do |room| %>
+    <div class=" result ">
+      <%= link_to room_path(room.id) do %>
+      <div>
+        <% if room.room_image.attached? %>
+          <%= image_tag room.room_image, class:"result-image"%>
+        <% else %> 
+          <img class="result-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/room01.jpg">
+        <% end %> 
+      </div>
+      <div class="result-info">
+      <div class="room-detail">
+        <h5><%= room.name %></h5>
+        <h6><%= room.adress %></h6>
+      </div>
+      <div class="room-price">
+        <p>¥ <%= room.price %></p>
+      </div>
+      </div>
+    </div>
+      <% end %> 
+  <% end %> 
+  </div>
+</div> 

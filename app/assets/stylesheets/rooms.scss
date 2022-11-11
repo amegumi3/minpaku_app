@@ -1,0 +1,97 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.show-view {
+  margin-top: 30px;
+}
+.room-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.room-info {
+  display: flex;
+  padding: 25px 0px 10px 5px;
+  border-bottom: 1px solid #eaedef;
+}
+.show-room-image {
+  max-height: 500px;
+  object-fit: cover;
+}
+.show-room-detail {
+  margin-left: 30px;
+}
+.show-room-detail h5 {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.show-room-introduction {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px 15px;
+}
+/*予約*/
+.new-reservation {
+  border: 1px solid #eaedef;
+  padding: 20px;
+}
+.reservation-form p {
+  margin-bottom: 0px;
+}
+
+.reservation-form input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.submit {
+  width :100%;
+  margin-top: 20px;
+}
+@media (min-width: 1000px) {
+  .show-view {
+    display: flex;
+    justify-content: space-between;
+  }
+  .room-wrapper {
+    width: 70%;
+    margin-right: 35px;
+  }
+  .new-reservation {
+    width: 30%;
+    height: 50%;
+  }
+
+}
+
+@media (min-width: 1000px) {
+  .show-room-image {
+    max-width: 1000px;
+  }
+}
+
+/*検索結果画面*/
+.search-view {
+  margin: 20px 10px;
+}
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.result {
+  border: 1px solid #eaedef;
+  margin: 5px;
+}
+.result-image {
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+  margin: 5px;
+}
+.result-info {
+  padding: 10px;
+}
+.room-detail h5{
+  text-decoration: none;
+}
+.room-price {
+  text-align: end;
+}

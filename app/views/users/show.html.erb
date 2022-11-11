@@ -1,0 +1,33 @@
+<div class="view">
+ <div class="nav">
+  <ul>
+   <li><%= link_to "アカウント", user_path, class:"nav-title account" %></li>
+   <li><%= link_to "プロフィール", edit_user_path, class:"nav-not-title " %></li>
+  </ul>
+ </div>
+ <div class="form-wrapper color-form-wrapper">
+  <div class= "form">
+   <%= form_with model: @user do |f| %>
+   <div class="setting-row">
+    <h5>アカウント</h5>
+   </div>
+    <div class="setting-row">
+      <ul>
+       <li class="label">メールアドレス</li>
+       <li><%= @user.email %></li>
+      </ul>
+    </div>
+    <div class="setting-row">
+      <ul>
+       <li class="label"><%= "パスワード" %></li>
+       <li>********</li>
+      </ul>
+    </div>
+    <div class="setting-row">
+    <%= link_to "編集", edit_user_registration_path, class:"submit account-button" %>
+    </div>
+   </div>
+   <% end %>
+  </div>
+ </div>
+</div>

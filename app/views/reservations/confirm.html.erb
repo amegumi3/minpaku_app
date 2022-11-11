@@ -1,0 +1,38 @@
+<div class="confirm-view-wrapper">
+ <div class="confirm-view">
+  <h2>予約内容確認</h2>
+  <h3>¥　<%=@room.price%>  / 日</h3>
+    <table>
+      <tr>
+        <td>開始日</td>
+        <td><%= @reservation.start_date.to_s(:datetime)%></td>
+      </tr>
+      <tr>
+        <td>終了日</td>
+        <td><%= @reservation.end_date.to_s(:datetime) %></td>
+      </tr>
+      <tr>
+       <td>使用日数:  </td>
+       <td><%= ((@reservation.end_date)-(@reservation.start_date))/86400%>日</td>
+      </tr>
+      <tr>
+        <td>人数</td>
+        <td><%= @reservation.how_many %>人</td>
+      </tr> 
+      <tr>
+        <td>合計料金</td>
+        <td>¥<%= (@reservation.how_many)*(@room.price)*(((@reservation.end_date)-(@reservation.start_date))/86400) %></td>
+      </tr>
+    </table>
+  <%= form_with model: @reservation do |f| %>
+    <%= f.hidden_field :start_date %>
+    <%= f.hidden_field :end_date %>
+    <%= f.hidden_field :how_many %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :room_id %>
+    <%= f.submit "予約を確定", class:"submit" %>
+    <%= f.submit "ルーム詳細に戻る", name: "back", class:"return" %>
+  <% end %>
+ </div>
+</div>
+
