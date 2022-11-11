@@ -1,16 +1,13 @@
 class RoomsController < ApplicationController
   def index
-    @q = Room.ransack(params[:q])
     @rooms = Room.where(user_id: current_user.id)
   end
 
   def new
-    @q = Room.ransack(params[:q])
     @room = Room.new
   end
   
   def create
-    @q = Room.ransack(params[:q])
     @room = Room.new(room_params)
     if @room.save
       flash[:success] = "新規投稿をしました"
@@ -22,7 +19,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @q = Room.ransack(params[:q])
     @room = Room.find(params[:id])
     @reservation = Reservation.new
   end  
@@ -37,7 +33,6 @@ class RoomsController < ApplicationController
   end
 
   def search
-    @q = Room.ransack(params[:q])
     if params[:content] == "東京"
       @rooms = Room.where("adress like ?", "東京%")
     elsif params[:content] == "大阪"

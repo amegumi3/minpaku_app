@@ -1,16 +1,13 @@
 class UsersController < ApplicationController
   def show
-    @q = Room.ransack(params[:q])
     @user = User.find(current_user.id)
   end
 
   def edit
-    @q = Room.ransack(params[:q])
     @user = User.find(current_user.id)
   end
 
   def update
-    @q = Room.ransack(params[:q])
     @user = User.find(params[:id])
     if @user.update(update_params)
       flash[:success] = "更新しました"

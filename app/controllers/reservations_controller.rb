@@ -1,11 +1,9 @@
 class ReservationsController < ApplicationController
   def index
-    @q = Room.ransack(params[:q])
     @reservations = Reservation.where(user_id: current_user.id)
   end
 
   def new
-    @q = Room.ransack(params[:q])
     @reservation = Reservation.new
   end
 
@@ -13,7 +11,6 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    @q = Room.ransack(params[:q])
     @reservation = Reservation.new(reservation_params)
     @room = Room.find(@reservation.room_id)
     if @reservation.invalid?
@@ -23,7 +20,6 @@ class ReservationsController < ApplicationController
   end  
 
   def create
-    @q = Room.ransack(params[:q])
     @reservation = Reservation.new(reservation_params)
     @room = Room.find(@reservation.room_id)
     if params[:back]
