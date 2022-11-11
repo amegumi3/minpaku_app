@@ -15,9 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
+   def edit
+  @q = Room.ransack(params[:q])
   #   super
-  # end
+   end
 
   # PUT /resource
   # def update

@@ -4,9 +4,9 @@
       <div class="col-lg-6 col-md-8 mx-auto top-message">
         <h3 class="fw-light">Potepan Shareでまだ体験したことのない旅をしよう</h3>
         <%= search_form_for @q,url: search_rooms_path  do |f| %>
-          <p></p><%= f.label :adress_cont, "エリア" %>
+          <%= f.label :adress_cont, "エリア" %>
           <br>
-          <%= f.search_field :adress_cont %>
+          <%= f.search_field :adress_cont,placeholder: "東京" %>
           <br>
           <%= f.submit class:"search-button "%>
         <% end %>

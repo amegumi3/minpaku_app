@@ -19,6 +19,7 @@
   text-decoration: none;
   box-sizing: border-box;
  }
+
 .name {
   color: white;
   padding-top: 15px;
@@ -31,6 +32,15 @@
   border-radius: 50%;  
   width:  50px;       
   height: 50px;
+}
+.header-left {
+  display: flex;
+}
+.header-search {
+  margin-top: 20px;
+}
+.header-search-button {
+  display: none;
 }
 .nav-list{
   padding-left: 10px;
@@ -64,6 +74,21 @@ footer {
   font-weight: bold;
   text-align: center;
 }
+.submit {
+  padding: 10px 50px;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid  #4a90e2;
+}
+.return {
+  padding: 10px 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: gray;
+  border: 1px solid  gray;
+  width: 100%;
+}
 
 /*ログイン、サインイン、アカウント共通CSS*/
 .form-wrapper{
@@ -92,7 +117,6 @@ footer {
   text-align: left;
   font-weight: bold;
 }
-
 .setting-row ul {
   list-style: none;
   display: flex;
@@ -108,12 +132,6 @@ footer {
   width: 100%;
 }
 
-.submit {
-  padding: 10px 50px;
-  border-radius: 5px;
-  color: white;
-  border: 1px solid  #4a90e2;
-}
 .nav {
   padding-bottom: 20px;
 }
@@ -150,7 +168,11 @@ footer {
   color: white;
   text-decoration: none;
 }
+
 @media (max-width: 1000px) {
+  .header-search {
+    display: none;
+  }
   .form {
    width: 97%;
   }
@@ -187,6 +209,7 @@ footer {
     width: 80%;
   }
 }
+
 /*index画面*/
 .index-view {
   padding-left: 40px;
@@ -210,4 +233,18 @@ tbody td{
 }
 .index-title {
   padding: 20px 0px;
+}
+
+/*アカウント編集画面・予約確認画面*/
+.edit-view-wrapper, .confirm-view-wrapper {
+  border: 1px solid #eaedef;
+  display: flex;
+  justify-content: center;
+}
+.edit-view, .confirm-view {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  border: 1px solid #eaedef;
+  padding: 20px 80px;
+  text-align: center;
 }
