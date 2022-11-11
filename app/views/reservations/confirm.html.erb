@@ -12,8 +12,8 @@
         <td><%= @reservation.end_date.to_s(:datetime) %></td>
       </tr>
       <tr>
-       <td>使用日数: : </td>
-       <td><%= (@reservation.end_date)-(@reservation.start_date) %>日</td>
+       <td>使用日数:  </td>
+       <td><%= ((@reservation.end_date)-(@reservation.start_date))/86400%>日</td>
       </tr>
       <tr>
         <td>人数</td>
@@ -21,7 +21,7 @@
       </tr> 
       <tr>
         <td>合計料金</td>
-        <td>¥<%= (@reservation.how_many)*(@room.price) %></td>
+        <td>¥<%= (@reservation.how_many)*(@room.price)*(((@reservation.end_date)-(@reservation.start_date))/86400) %></td>
       </tr>
     </table>
   <%= form_with model: @reservation do |f| %>

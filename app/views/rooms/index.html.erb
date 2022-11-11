@@ -19,7 +19,7 @@
      <% if room.room_image.attached? %>
       <%= image_tag room.room_image.variant(resize: "200"), class: "room-image"%>    
      <% else %>
-      <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/room01.jpg", class= "room-image">
+      <img class="room-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/room01.jpg" >
      <% end %>
      </td>
      <td>

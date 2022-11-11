@@ -20,7 +20,7 @@
    <% if reservation.room.room_image.attached? %>
     <%= image_tag reservation.room.room_image.variant(resize: "200"), class:"room-image"%>
    <% else %>
-    <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/room01.jpg">
+    <img class="room-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/room01.jpg">
    <% end %>
    </td>
    <td>
@@ -28,7 +28,7 @@
     <%= reservation.room.name %>
    <% end %>
   </td>
-   <td>¥<%= (reservation.room.price)*(reservation.how_many)%></td>
+   <td>¥<%= ((reservation.room.price)*(reservation.how_many))*((reservation.end_date)-(reservation.start_date))/86400 %></td>
    <td><%= reservation.start_date.to_s(:datetime)%></td>
    <td><%= reservation.end_date.to_s(:datetime)%></td>
    <td><%= reservation.created_at.to_s(:datetime)%></td>

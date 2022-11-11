@@ -16,14 +16,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
    def edit
-  @q = Room.ransack(params[:q])
-  #   super
+    @q = Room.ransack(params[:q])
+
+     super
    end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+   def update
+    @q = Room.ransack(params[:q])
+     super
+   end
 
   # DELETE /resource
   # def destroy
